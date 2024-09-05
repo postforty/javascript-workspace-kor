@@ -47,4 +47,4 @@ console.log(5 !== '5') // true
 console.log(1 < 2); // true
 console.log(1 < '2'); // true
 console.log(2 >= '2'); // true
-console.log(2 >= Boolean('2')); // true
+console.log(2 <= Number(Boolean('2'))); // false
