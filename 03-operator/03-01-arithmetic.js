@@ -43,3 +43,11 @@ console.log(Boolean("0")) // true
 const arr = []
 console.log(Boolean(arr)) // true
 console.log(Boolean(arr.length !== 0)) // false
+
+const obj = {}
+console.log(Boolean(obj))
+console.log(Object.keys(obj).length !== 0)
+
+console.log(isNaN("0"))
+console.log(isNaN(0))
+console.log(isNaN("a"))
