@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <script>
+        let value = 1;
+
+        const obj = {
+            value: 100,
+            foo: function () {
+                console.log("obj foo :", this.value);
+            }
+        }
+        obj.foo(); // {value: 100, foo: ƒ}
+
+        const obj2 = obj.foo; 
+        obj2(); // window
+    </script>
+</body>
+
+</html>
