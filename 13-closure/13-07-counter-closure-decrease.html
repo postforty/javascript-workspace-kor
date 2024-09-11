@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <h2>클로저를 사용한 Counting(decrease 추가)</h2>
+    <button id="increase">+</button>
+    <button id="decrease">-</button>
+    <p id="count">0</p>
+    <script>
+        let increaseBtn = document.getElementById("increase");
+        let decreaseBtn = document.getElementById("decrease");
+        let count = document.getElementById("count");
+
+
+        const counterObj = (function () {
+            let counter = 0;
+
+            return {
+                increase: function () {
+                    return ++counter;
+                },
+                decrease: function () {
+                    return --counter;
+                },
+            }
+        })();
+
+        console.log(counterObj)
+
+        increaseBtn.onclick = function () {
+            count.innerHTML = counterObj.increase();
+        }
+        decreaseBtn.onclick = function () {
+            count.innerHTML = counterObj.decrease();
+        }
+    </script>
+</body>
+
+</html>
