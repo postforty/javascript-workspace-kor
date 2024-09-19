@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <script>
+        if (false) {
+            window.alert("Hello, world!");
+
+            let result = window.confirm();
+            console.log(result); // true/false
+
+            result = window.prompt();
+            console.log(result);
+
+            console.log(window.location.href); // 현재 경로
+            window.location.href = "https://www.naver.com"; // 리다이렉션
+
+            // 현재 브라우저 창의 너비/높이
+            console.log(window.innerWidth);
+            console.log(window.innerHeight);
+
+            window.localStorage.setItem("username", "오일남");
+            window.localStorage.setItem("username", "오이남");
+            window.localStorage.setItem("age", 98);
+    
+            const username = window.localStorage.getItem("username");
+            const age = window.localStorage.getItem("age");
+    
+            console.log(`현재 사용자는 ${username}님이고, 나이는 ${age}세입니다.`)
+    
+            window.localStorage.removeItem("age");
+    
+            window.sessionStorage.setItem("sessionKey", "abcd1234");
+            const key = window.sessionStorage.getItem("sessionKey");
+            console.log(key)
+    
+            // window.sessionStorage.removeItem("sessionKey");
+            window.sessionStorage.clear();
+    
+            const user = { name: "오일남", age: 99 }
+            window.sessionStorage.setItem("user", JSON.stringify(user));
+            const sessionUser = JSON.parse(window.sessionStorage.getItem("user"));
+            console.log(sessionUser);
+    
+            // 로컬 스토리지의 데이터는 사용자가 지우지 않는 이상 계속 브라우저에 남아 있음.
+            // 세션 스토리지의 데이터는 윈도우나 브라우저 탭을 닫을 경우 제거됨.
+
+            window.setTimeout(() => {
+                console.log("1초 뒤 출력")
+            }, 1000)
+        }
+
+        let count = 0;
+        const intervalExample = window.setInterval(() => {
+                console.log(`1초 마다 실행(${++count})`)
+                if (count === 3) {
+                    clearInterval(intervalExample);
+                }
+            }, 1000)
+
+    </script>
+</body>
+
+</html>
