@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+    <h1>Title</h1>
+    <p>Paragraph 1</p>
+    <p id="text">Paragraph 2(id)</p>
+    <p class="paragraph">Paragraph 3(class)</p>
+    <p class="paragraph">Paragraph 4(class)</p>
+    <!-- 주석 노드 -->
+    <script>
+        /**
+         * [DOM]
+         * HTML 코드를 해석해서 요소들을 트리 형태로 구조화해서 표현하는 형식
+         * 자바스크립트를 사용해서 웹 화면의 콘텐츠를 추가, 수정, 삭제, 이벤트 처리 API 제공
+         * window.document : DOM 페이지 콘텐츠 진입점 역할을 하는 API
+         * 
+         * [DOM 구성 기본 원칙]
+         * - 요소(element) 노드: 모든 HTML 태그
+         * - 텍스트(text) 노드: HTML 태그에서 사용하는 텍스트 내용
+         * - 속성(attribute) 노드: HTML 태그에 있는 속성
+         * - 주석(comment) 노드: 주석
+         */
+        console.log(window.document.querySelector("h1"));
+        console.log(document.querySelector("h1").innerHTML);
+        console.log(document.querySelector("h1").innerText);
+        console.log(document.querySelector("h1").textContent);
+        console.log(document.querySelector("p"));
+        console.log(document.querySelector("#text"));
+        console.log(document.querySelector(".paragraph"));
+        // console.log(document.querySelector(".paragrap")); // null
+        console.log(document.querySelectorAll(".paragraph")[1]);
+
+        const title = document.querySelector("h1");
+        title.innerHTML = "제목";
+    </script>
+</body>
+
+</html>

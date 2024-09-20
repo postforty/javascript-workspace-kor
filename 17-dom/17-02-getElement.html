@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Title</h1>
+    <p>Paragraph 1</p>
+    <p id="text">Paragraph 2(id)</p>
+    <p class="paragraph">Paragraph <b>3</b><span class="hidden">(class)</span></p>
+    <p class="paragraph">Paragraph 4(class)</p>
+    <script>
+        console.log(document.getElementById("text"))
+        console.log(document.getElementsByClassName("paragraph")[0])
+        console.log(document.getElementsByClassName("paragraph")[1])
+
+        const p = document.getElementById("text")
+        // console.log(p.textContent)
+        p.textContent = "문단 2";
+
+        const pClass = document.getElementsByClassName("paragraph")
+        // console.log(pClass)
+        console.log(pClass[0].innerHTML); // 텍스트 + 태그
+        // Paragraph <b>3</b><span class="hidden">(class)</span>
+
+        console.log(pClass[0].innerText); // 텍스트(숨겨진 요소 텍스트 미포함)
+        // Paragraph 3
+
+        console.log(pClass[0].textContent); // 텍스트 + 숨겨진 요소 텍스트 포함
+        // Paragraph 3(class)
+    </script>
+</body>
+
+</html>
