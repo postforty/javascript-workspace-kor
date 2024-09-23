@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        html {
+            background-color: antiquewhite;
+        }
+
+        body {
+            background-color: aqua;
+        }
+
+        body * {
+            margin: 10px;
+            border: 2px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <form>FORM
+        <div>DIV
+            <p>P</p>
+        </div>
+    </form>
+    <script>
+        const allDom = document.querySelectorAll("*");
+        // console.log(allDom[0].tagName);
+        for (let elem of allDom) {
+            elem.addEventListener("click", () => console.log(`캡쳐링: ${elem.tagName}`), true)
+        }
+        for (let elem of allDom) {
+            elem.addEventListener("click", () => console.log(`버블링: ${elem.tagName}`))
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<body>
+    <input type="text" id="typing" />
+    <input type="button" id="push" value="PUSH" />
+    <script>
+        /**
+         * addEventListener
+         * - 이벤트 리스너를 제거하는 기능 제공(removeEventListener)
+         * - 동일한 요소에 대해 여거 개의 이벤트 리스너 추가 가능
+         */
+        const inputText = document.querySelector("#typing");
+        const inputClick = document.getElementById("push");
+
+        const handleTyping = function () {
+            console.log("타이핑!")
+        }
+        const handleAlert = () => {
+            alert("타이핑!")
+        }
+
+        inputText.addEventListener("keydown", handleTyping);
+        inputText.removeEventListener("keydown", handleTyping);
+        // inputText.addEventListener("keydown", handleAlert);
+
+        // inputText.addEventListener("keydown", () => console.log("타이핑!"));
+        // inputText.removeEventListener("keydown", () => console.log("타이핑!")); // 삭제 안됨
+
+        
+        /**
+         * event객체
+         * - 추가적인 기능, 정보를 제공하기 위해 이벤트 핸들러에 자동 전달되는 데이터
+         * - 이벤트 핸들러 함수에 매개변수 추가하여 이벤트 발생시 마다 전달 받을 수 있음
+         */
+        let inputValue = '';
+        inputText.addEventListener("keyup", function (event) {
+            // console.log(event.target.value)
+            inputValue = event.target.value;
+        })
+        
+        function handleClick() {
+            // console.log("클릭!")
+            alert(inputValue);
+        }
+
+        inputClick.addEventListener("click", handleClick);
+    </script>
+</body>
+
+</html>

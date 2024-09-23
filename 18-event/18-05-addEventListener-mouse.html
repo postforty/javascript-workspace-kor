@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transition: all 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        const myRect = document.querySelector("div");
+        myRect.addEventListener("mouseover", () => {
+            myRect.style.backgroundColor = "blue";
+            myRect.style.borderRadius = "50%";
+        })
+        myRect.addEventListener("mouseout", () => {
+            myRect.style.backgroundColor = "red";
+            myRect.style.borderRadius = "";
+        })
+    </script>
+</body>
+
+</html>

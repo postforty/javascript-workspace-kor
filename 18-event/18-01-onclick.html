@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <style>
+        #colorBox {
+            width: 100px;
+            height: 100px;
+            background-color: lightgray;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><a href="" onclick="alert('레드 버튼 클릭!')">RED</a></li>
+        <li><a href="" onclick="alert('그린 버튼 클릭!')">GEEN</a></li>
+        <li><a href="" onclick="alert('블루 버튼 클릭!')">BLUE</a></li>
+    </ul>
+    <br>
+    <ul>
+        <li><a href="#" onclick="changeColor('red')">RED</a></li>
+        <li><a href="#" onclick="changeColor('green')">GEEN</a></li>
+        <li><a href="#" onclick="changeColor('blue')">BLUE</a></li>
+    </ul>
+    <div id="colorBox"></div>
+    <script>
+        function changeColor(color) {
+            // document.getElementById("colorBox").style.backgroundColor = color
+            document.querySelector("#colorBox").style.backgroundColor = color
+        }
+    </script>
+</body>
+
+</html>

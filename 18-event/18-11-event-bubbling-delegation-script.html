@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <button class="btn" value="1"><span class="btn-label">버튼 1</span></button>
+        <button class="btn" value="2"><span class="btn-label">버튼 2</span></button>
+        <button class="btn" value="3"><span class="btn-label"><span>버튼 3</span></span></button>
+    </div>
+    <script>
+        const menu = document.querySelector(".menu");
+
+        function handleBtn(e) {
+            let elem = e.target;
+            // console.log(elem.classList)
+            while (!elem.classList.contains('btn')) {
+                elem = elem.parentNode;
+
+                if(elem.nodeName ==="BODY") {
+                    elem = null;
+                    return;
+                }
+            }
+            console.log(elem.value)
+        }
+
+        menu.addEventListener("click", handleBtn)
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <div>
+        <button><span>버튼 1</span></button>
+        <button><span>버튼 2</span></button>
+        <button><span>버튼 3</span></button>
+    </div>
+    <script>
+        const btns = document.querySelectorAll("button");
+        // console.log(btns[0])
+        // console.log(btns[1])
+        // console.log(btns[2])
+
+        function handleBtn() {
+            console.log(this);
+        }
+
+        // btns[0].addEventListener("click", handleBtn)
+        // btns[1].addEventListener("click", handleBtn)
+        // btns[2].addEventListener("click", handleBtn)
+
+        // addEventListener()를 많이 사용하면 메모리 사용이 늘어나서 페이지 성능에 영향을 미칠수 있음!
+        btns.forEach((_, i) => {
+            btns[i].addEventListener("click", handleBtn)
+        })
+    </script>
+</body>
+
+</html>

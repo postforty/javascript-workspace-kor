@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        span {
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button value="1"><span>버튼 1</span></button>
+        <button value="2"><span>버튼 2</span></button>
+        <button value="3"><span>버튼 3</span></button>
+    </div>
+    <script>
+        const menu = document.querySelector("div");
+
+        function handleBtn(e) {
+            console.log(e.target.value);
+        }
+
+        menu.addEventListener("click", handleBtn)
+        
+    </script>
+</body>
+
+</html>

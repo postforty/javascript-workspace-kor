@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ko">
+<body>
+    <input type="text" id="typing" />
+    <button>제출</button>
+    <script>
+        const textInput = document.querySelector("#typing")
+        const button = document.querySelector("button")
+        button.addEventListener("click", () => {
+            console.log(textInput.value)
+        })
+    </script>
+</body>
+</html>
